@@ -37,7 +37,12 @@
             top: 0;
             z-index: 100;
         }
-        .logo-img { height: 50px; width: auto; }
+        
+        .logo-img { 
+            height: 40px; /* Tamaño perfecto para barra de navegación */
+            width: auto; 
+            display: block;
+        }
         
         .price-tag {
             background: var(--dark);
@@ -119,6 +124,7 @@
             width: 100%;
         }
         
+        /* Ajuste para que la imagen familiar no rompa el diseño si no está */
         .lifestyle-img {
             width: 100%;
             height: 400px;
@@ -127,6 +133,7 @@
             opacity: 0.8;
             mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
             -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+            background-color: #eee; /* Fondo gris por si falla la carga */
         }
         
         .app-mockup {
@@ -191,9 +198,21 @@
             border-radius: 20px;
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
             scroll-snap-align: center;
+            border: 4px solid white;
         }
 
-        footer { padding: 40px 5%; text-align: center; font-size: 0.8rem; color: #aaa; background: #fff; }
+        /* --- LEGAL FOOTER (AQUÍ ESTÁ LO QUE PEDÍAS) --- */
+        footer { 
+            background: #1E293B; 
+            color: #94A3B8; 
+            padding: 60px 5%; 
+            font-size: 0.9rem; 
+            text-align: center;
+            margin-top: 0;
+        }
+        .legal-content { max-width: 800px; margin: 0 auto; text-align: left; }
+        .legal-content h4 { color: white; margin-bottom: 20px; border-bottom: 1px solid #334155; padding-bottom: 10px; }
+        .legal-content p { margin-bottom: 10px; line-height: 1.5; }
 
         @media (min-width: 768px) {
             .hero h1 { font-size: 4rem; }
@@ -205,8 +224,9 @@
 <body>
 
     <nav>
-        <img src="logo.png" alt="CustodiApp" class="logo-img" onerror="this.style.display='none'; document.getElementById('txt-logo').style.display='block'">
-        <div id="txt-logo" style="display:none; font-weight:900; color:var(--blue); font-size:1.5rem;">CustodiApp</div>
+        <img src="logo.png" alt="CustodiApp Logo" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+        <div style="display:none; font-weight:900; color:var(--blue); font-size:1.5rem;">CustodiApp</div>
+        
         <div class="price-tag">SOLO 2,99€</div>
     </nav>
 
@@ -223,7 +243,8 @@
         <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.7;">Pago seguro a través de Google Play</p>
 
         <div class="hero-image-container">
-            <img src="familia.jpg" alt="Familia feliz" class="lifestyle-img" onerror="this.style.background='#eee'">
+            <img src="familia.jpg" alt="Familia feliz" class="lifestyle-img">
+            
             <img src="movil.jpg" alt="App Preview" class="app-mockup">
         </div>
     </header>
@@ -262,8 +283,14 @@
     </div>
 
     <footer>
-        <div id="privacidad">
-            <p>&copy; 2026 CustodiApp. Hecho con ❤️ y experiencia real.</p>
+        <div class="legal-content" id="privacidad">
+            <h4>Política de Privacidad y Aviso Legal</h4>
+            <p><strong>Última actualización: Febrero 2026</strong></p>
+            <p><strong>1. Privacidad Absoluta:</strong> CustodiApp ha sido diseñada con un enfoque de "Privacidad Primero". La aplicación NO recopila, transmite, ni almacena ningún tipo de dato personal (nombres, correos electrónicos, ubicaciones, etc.) en servidores externos.</p>
+            <p><strong>2. Almacenamiento Local:</strong> Toda la información introducida por el usuario (patrones de custodia, notas, fechas) se almacena únicamente en la memoria interna del dispositivo del usuario (Local Storage).</p>
+            <p><strong>3. Permisos:</strong> La aplicación puede solicitar permiso de acceso al almacenamiento únicamente para permitir al usuario guardar imágenes del calendario o realizar copias de seguridad manuales.</p>
+            <p><strong>4. Responsabilidad:</strong> CustodiApp es una herramienta de organización personal. El desarrollador no se hace responsable de posibles errores en la introducción de datos por parte del usuario.</p>
+            <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.5; text-align: center;">&copy; 2026 CustodiApp. Hecho con ❤️ para la tranquilidad familiar.</p>
         </div>
     </footer>
 
