@@ -7,11 +7,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --blue: #2D408F;    /* Color Corporativo Principal */
-            --green: #76B852;   /* Color CON */
-            --orange: #FF9800;  /* Color SIN */
-            --dark: #1E293B;    /* Color Texto Oscuro y Footer */
-            --light: #F8FAFC;   /* Color Fondos Claros */
+            --blue: #2D408F;
+            --green: #76B852;
+            --orange: #FF9800;
+            --dark: #1E293B;
+            --light: #F8FAFC;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -23,39 +23,23 @@
             overflow-x: hidden;
         }
 
-        /* Títulos y Marca con fuente fuerte */
         h1, h2, h3, .brand-text, .image-slogan { font-family: 'Montserrat', sans-serif; font-weight: 900; }
 
-        /* --- NAVBAR PROFESIONAL --- */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 15px 5%;
             background: white;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08); /* Sombra más elegante */
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             position: sticky;
             top: 0;
             z-index: 100;
         }
         
-        .nav-brand {
-            display: flex;
-            align-items: center;
-            gap: 12px; /* Espacio entre icono y texto */
-        }
-
-        .logo-img { 
-            height: 42px; 
-            width: auto; 
-            display: block;
-        }
-
-        .brand-text {
-            font-size: 1.4rem;
-            color: var(--blue);
-            letter-spacing: -0.5px;
-        }
+        .nav-brand { display: flex; align-items: center; gap: 12px; }
+        .logo-img { height: 42px; width: auto; display: block; }
+        .brand-text { font-size: 1.4rem; color: var(--blue); letter-spacing: -0.5px; }
         
         .price-tag {
             background: var(--dark);
@@ -128,7 +112,7 @@
             box-shadow: 0 15px 30px rgba(118, 184, 82, 0.4);
             transition: all 0.2s ease;
             display: inline-block;
-            border-bottom: 4px solid #4a802e; /* Efecto 3D botón */
+            border-bottom: 4px solid #4a802e;
         }
         .cta-button:hover { transform: translateY(-3px); box-shadow: 0 20px 40px rgba(118, 184, 82, 0.5); }
         .cta-button:active { transform: translateY(1px); border-bottom-width: 2px; }
@@ -142,46 +126,45 @@
             justify-content: center;
         }
 
-        /* --- NUEVO ESTILO PARA EL ESLOGAN --- */
+        /* --- CORRECCIÓN DE POSICIONES --- */
         .image-slogan {
             position: absolute;
-            top: 35%; /* Posición vertical sobre el fondo */
+            top: 15%; /* LO HE SUBIDO (Antes era 35%) */
             left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 2; /* Encima del fondo gris */
-            color: white; /* Texto blanco para contraste */
-            font-size: 2rem; /* Tamaño grande */
+            transform: translate(-50%, 0); /* Centrado horizontal, pero fijo arriba */
+            z-index: 2;
+            color: white;
+            font-size: 1.8rem; /* Un pelín más pequeño en móvil para que quepa */
             text-transform: uppercase;
             letter-spacing: 2px;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.25); /* Sombra para que se lea bien */
+            text-shadow: 0 4px 15px rgba(0,0,0,0.3);
             width: 90%;
             line-height: 1.3;
         }
         
-        /* Fondo gris elegante (si no hay foto de familia) */
         .lifestyle-img {
             width: 100%;
-            height: 500px;
+            height: 550px; /* Un poco más de altura para que quepa todo */
             object-fit: cover;
             border-radius: 24px 24px 0 0;
             opacity: 0.9;
             mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
             -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
-            background-color: #94A3B8; /* Un gris azulado más corporativo */
+            background-color: #94A3B8; 
         }
         
         .app-mockup {
             width: 280px;
             position: absolute;
-            top: 100px; /* Ajustado para que no tape el eslogan */
-            z-index: 3; /* Encima del eslogan */
+            top: 160px; /* LO HE BAJADO (Antes era 100px) para dejar sitio al texto */
+            z-index: 3;
             border-radius: 38px;
             box-shadow: 0 25px 60px -12px rgba(0,0,0,0.4);
             border: 6px solid #fff;
         }
 
-        /* --- FEATURES GRID --- */
-        .features { padding: 180px 5% 80px; background: white; /* Más padding top por el móvil */ }
+        /* --- FEATURES --- */
+        .features { padding: 180px 5% 80px; background: white; }
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -199,13 +182,11 @@
         .card h3 { font-size: 1.4rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
         .card p { font-size: 1rem; line-height: 1.6; opacity: 0.9; }
 
-        /* --- NO BS SECTION --- */
         .no-bs {
             background: var(--blue);
             color: white;
             padding: 70px 5%;
             text-align: center;
-            /* Patrón de fondo sutil */
             background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.1) 1px, transparent 0);
             background-size: 20px 20px;
         }
@@ -223,7 +204,6 @@
         .x-icon { color: #ff8f8f; font-weight: 900; font-size: 1.3rem; }
         .check-icon { color: var(--green); font-weight: 900; font-size: 1.3rem; }
 
-        /* --- GALLERY --- */
         .gallery-section { padding: 60px 5%; background: var(--light); text-align: center; }
         .gallery-section h2 { color: var(--blue); margin-bottom: 40px; font-size: 1.8rem; }
         .gallery-scroller {
@@ -232,12 +212,10 @@
             overflow-x: auto;
             padding-bottom: 30px;
             scroll-snap-type: x mandatory;
-             /* Ocultar barra de scroll pero mantener funcionalidad */
             scrollbar-width: none; 
             -ms-overflow-style: none;
         }
         .gallery-scroller::-webkit-scrollbar { display: none; }
-
         .gallery-scroller img {
             height: 450px;
             border-radius: 24px;
@@ -247,10 +225,9 @@
             flex-shrink: 0;
         }
 
-        /* --- FOOTER LEGAL (Blindado) --- */
         footer { 
-            background: var(--dark); /* Fondo oscuro asegurado */
-            color: #94A3B8; /* Texto gris claro */
+            background: var(--dark);
+            color: #94A3B8;
             padding: 70px 5%; 
             font-size: 0.9rem; 
         }
@@ -266,9 +243,9 @@
         @media (min-width: 768px) {
             .hero h1 { font-size: 4.2rem; }
             .lifestyle-img { height: 600px; }
-            .app-mockup { width: 360px; top: 120px; }
+            .app-mockup { width: 360px; top: 180px; /* Ajuste también para PC */ }
             .brand-text { font-size: 1.6rem; }
-            .image-slogan { font-size: 3rem; top: 30%; } /* Más grande en PC */
+            .image-slogan { font-size: 3.5rem; top: 15%; }
         }
     </style>
 </head>
@@ -279,7 +256,6 @@
             <img src="logo.png" alt="CustodiApp Logo" class="logo-img" onerror="this.style.display='none'">
             <span class="brand-text">CustodiApp</span>
         </div>
-        
         <div class="price-tag">SOLO 2,99€</div>
     </nav>
 
@@ -296,11 +272,8 @@
         <p style="font-size: 0.85rem; margin-top: 12px; opacity: 0.8; font-weight: 600;">Pago seguro a través de Google Play</p>
 
         <div class="hero-image-container">
-            
             <h3 class="image-slogan">FAMILIA ORGANIZADA.<br>VIDA TRANQUILA.</h3>
-
             <img src="familia.jpg" alt="" class="lifestyle-img">
-            
             <img src="movil.jpg" alt="App Vista Anual" class="app-mockup">
         </div>
     </header>
@@ -311,12 +284,10 @@
                 <h3 style="color: var(--green)">✅ AL GRANO</h3>
                 <p>Sabemos que no quieres perder tiempo configurando mil opciones inútiles. CustodiApp se enfoca en lo importante: visualizar tus días y organizarte en segundos.</p>
             </div>
-            
             <div class="card orange">
                 <h3 style="color: var(--orange)">🟧 MODELO JUSTO</h3>
                 <p>Creemos en la simplicidad. Olvídate de cuotas mensuales recurrentes que nunca acaban. Pagas una vez un precio simbólico (2,99€) y la herramienta es tuya para siempre.</p>
             </div>
-            
             <div class="card blue">
                 <h3 style="color: var(--blue)">🔒 CERO CURIOSOS</h3>
                 <p>Al contrario que la mayoría de apps, aquí <strong>no hay "Nube"</strong>. Tus datos, tus hijos y tus horarios se quedan blindados en tu teléfono. Nadie más tiene acceso.</p>
