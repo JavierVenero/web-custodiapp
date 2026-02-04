@@ -3,49 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CustodiApp - Gestión Familiar Inteligente</title>
+    <title>CustodiApp - Tu Paz Mental en el Bolsillo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: -apple-system, sans-serif; margin: 0; padding: 0; background: #F4F6F8; color: #333; text-align: center; }
-        .hero { background: white; padding: 40px 20px; border-bottom: 1px solid #ddd; }
-        h1 { color: #2D408F; font-size: 2.2rem; margin-bottom: 10px; }
-        p.sub { font-size: 1.1rem; color: #666; max-width: 600px; margin: 0 auto; }
-        
-        /* Tu foto del calendario */
-        .mockup { 
-            width: 100%; 
-            max-width: 320px; 
-            margin-top: 30px; 
-            border-radius: 20px; 
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15); 
-            border: 4px solid white;
+        :root {
+            --primary: #2D408F;
+            --accent: #76B852;
+            --bg-light: #F4F7FE;
+            --text-dark: #1E293B;
+            --shadow: 0 20px 40px rgba(45, 64, 143, 0.15);
         }
 
-        .legal-section { margin-top: 50px; padding: 40px 20px; background: #EAECEF; text-align: left; font-size: 0.85rem; color: #555; }
-        .legal-container { max-width: 800px; margin: 0 auto; }
-        h3 { color: #2D408F; border-bottom: 1px solid #ccc; padding-bottom: 10px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* --- NAV --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo { font-weight: 800; font-size: 1.5rem; color: var(--primary); display: flex; align-items: center; gap: 10px; }
+        .logo-icon { width: 40px; height: 40px; background: linear-gradient(135deg, var(--primary), #4c6ef5); border-radius: 12px; color: white; display: flex; align-items: center; justify-content: center; font-size: 24px; }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            display: flex;
+            flex-direction: column-reverse; /* Móvil primero */
+            align-items: center;
+            padding: 40px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            gap: 40px;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            background: -webkit-linear-gradient(#2D408F, #4c6ef5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+
+        .hero-text p { font-size: 1.1rem; color: #64748B; margin-bottom: 30px; line-height: 1.6; }
+
+        .btn-download {
+            background: #000;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .btn-download:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(0,0,0,0.3); }
+
+        .hero-img {
+            position: relative;
+            width: 100%;
+            max-width: 350px;
+        }
+        .hero-phone {
+            width: 100%;
+            border-radius: 30px;
+            border: 8px solid #1E293B;
+            box-shadow: var(--shadow);
+            transform: rotate(-2deg);
+            transition: transform 0.5s ease;
+        }
+        .hero-phone:hover { transform: rotate(0deg) scale(1.02); }
+
+        /* --- FEATURES GRID --- */
+        .features { background: var(--bg-light); padding: 80px 5%; margin-top: 50px; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        .card:hover { transform: translateY(-10px); }
+        .icon { font-size: 40px; margin-bottom: 20px; display: block; }
+        .card h3 { color: var(--primary); margin-bottom: 10px; }
+
+        /* --- GALLERY --- */
+        .gallery { padding: 80px 5%; text-align: center; max-width: 1200px; margin: 0 auto; }
+        .gallery h2 { font-size: 2rem; color: var(--primary); margin-bottom: 40px; }
+        .gallery-grid {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding-bottom: 30px;
+            justify-content: center; /* Centrado en desktop */
+        }
+        .gallery-item {
+            min-width: 200px;
+            max-width: 250px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border: 4px solid #fff;
+        }
+
+        /* --- FOOTER LEGAL --- */
+        footer { background: #1E293B; color: #94A3B8; padding: 60px 5%; font-size: 0.9rem; }
+        .legal-content { max-width: 800px; margin: 0 auto; }
+        .legal-content h4 { color: white; margin-bottom: 20px; }
+        .legal-content p { margin-bottom: 10px; }
+
+        /* --- DESKTOP MEDIA QUERY --- */
+        @media (min-width: 768px) {
+            .hero {
+                flex-direction: row;
+                text-align: left;
+                padding: 80px 5%;
+            }
+            .hero-text { flex: 1; padding-right: 50px; }
+            .hero-text h1 { font-size: 3.5rem; }
+            .hero-img { flex: 1; display: flex; justify-content: center; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="hero">
-        <h1>CustodiApp</h1>
-        <p class="sub">Visualiza tu año completo. Organiza la custodia sin conflictos y sin compartir datos.</p>
-        
-        <img src="movil.jpg" alt="Calendario CustodiApp" class="mockup">
-    </div>
+    <nav>
+        <div class="logo"><div class="logo-icon">C</div> CustodiApp</div>
+        <a href="#descargar" style="color: var(--primary); text-decoration: none; font-weight: 600;">Ver en Tienda</a>
+    </nav>
 
-    <div class="legal-section">
-        <div class="legal-container">
-            <h3>Política de Privacidad</h3>
-            <p><strong>Última actualización: Febrero 2026</strong></p>
-            <p><strong>1. Privacidad Absoluta:</strong> CustodiApp no recopila, almacena ni transmite datos personales. No solicitamos correo electrónico, nombre ni ubicación.</p>
-            <p><strong>2. Almacenamiento Local:</strong> Toda la información que introduces (patrones de días, notas, colores) se guarda exclusivamente en la memoria interna de tu teléfono.</p>
-            <p><strong>3. Permisos:</strong> La app solo solicita acceso al almacenamiento si deseas guardar una imagen de tu calendario en la galería.</p>
-            <p><strong>4. Contacto:</strong> Para cualquier consulta, puedes contactar con el desarrollador a través de la tienda de aplicaciones.</p>
-            <br>
-            <p>&copy; 2026 CustodiApp. Todos los derechos reservados.</p>
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Organiza la custodia.<br>Sin dramas.</h1>
+            <p>La herramienta visual definitiva para padres separados. Gestiona el calendario, controla las excepciones y evita malentendidos. <strong>Privacidad absoluta: tus datos no salen de tu móvil.</strong></p>
+            
+            <a href="https://play.google.com/store/apps" class="btn-download" id="descargar">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="white"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.36,13.08L18.81,17.12L15.4,13.71L20.36,13.08M20.36,10.91L15.4,10.28L18.81,6.87L20.36,10.91M16.81,8.87L14.54,11.14L6.05,2.65L16.81,8.87Z" /></svg>
+                <span>Descargar en Google Play</span>
+            </a>
         </div>
-    </div>
+        <div class="hero-img">
+            <img src="movil.jpg" alt="CustodiApp Vista Anual" class="hero-phone">
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="grid">
+            <div class="card">
+                <span class="icon">🔒</span>
+                <h3>100% Privado</h3>
+                <p>No pedimos email, teléfono ni nombres. Todo lo que anotas se queda guardado exclusivamente en tu dispositivo. Tu vida es tuya.</p>
+            </div>
+            <div class="card">
+                <span class="icon">🎨</span>
+                <h3>Visual e Intuitivo</h3>
+                <p>Un sistema de colores (Con/Sin) para que sepas de un vistazo cómo está organizado el mes o el año completo.</p>
+            </div>
+            <div class="card">
+                <span class="icon">⚡</span>
+                <h3>Configuración Rápida</h3>
+                <p>Define tu patrón de 14 días una sola vez y la app rellena el calendario infinito automáticamente. Edita excepciones en segundos.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <h2>Así se ve por dentro</h2>
+        <div class="gallery-grid">
+            <img src="foto1.jpg" alt="Pantalla 1" class="gallery-item">
+            <img src="foto2.jpg" alt="Pantalla 2" class="gallery-item">
+            <img src="foto3.jpg" alt="Pantalla 3" class="gallery-item">
+        </div>
+    </section>
+
+    <footer>
+        <div class="legal-content" id="privacidad">
+            <h4>Información Legal y Privacidad</h4>
+            <p><strong>Responsable:</strong> CustodiApp Dev Team.</p>
+            <p><strong>Privacidad:</strong> Cumplimos estrictamente con la normativa de protección de datos. Esta aplicación opera localmente y no transmite información personal a servidores de terceros.</p>
+            <p><strong>Permisos:</strong> Solo se solicita acceso al almacenamiento para funciones opcionales de copia de seguridad manual.</p>
+            <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.5;">&copy; 2026 CustodiApp. Hecho con ❤️ para la tranquilidad familiar.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
