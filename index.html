@@ -23,7 +23,6 @@
             overflow-x: hidden;
         }
 
-        /* Títulos con Poppins */
         h1, h2, h3, .brand-text, .image-slogan, .big-price-number { font-family: 'Poppins', sans-serif; font-weight: 900; }
 
         nav {
@@ -93,12 +92,12 @@
             line-height: 1.6;
         }
 
-        /* --- NUEVA ESTRUCTURA DE PRECIO (SEPARADO) --- */
+        /* --- PRECIO SEPARADO --- */
         .price-container {
             margin: 25px 0;
         }
         .big-price-number {
-            font-size: 4rem; /* Precio gigante */
+            font-size: 4rem; 
             line-height: 1;
             color: var(--dark);
         }
@@ -106,7 +105,7 @@
             font-size: 1.3rem;
             color: #64748B;
             font-weight: 700;
-            margin-top: 5px; /* Separación del número */
+            margin-top: 5px; 
         }
 
         .cta-button {
@@ -125,7 +124,7 @@
         .cta-button:hover { transform: translateY(-3px); box-shadow: 0 20px 40px rgba(118, 184, 82, 0.5); }
         .cta-button:active { transform: translateY(1px); border-bottom-width: 2px; }
 
-        /* --- CONTENEDOR DE IMAGEN (SISTEMA FLEXBOX) --- */
+        /* --- CONTENEDOR FLEXBOX --- */
         .hero-image-container {
             position: relative;
             margin-top: 60px;
@@ -138,21 +137,21 @@
             min-height: 600px; 
         }
 
-        /* ARREGLO ICONO ROTO: color:transparent oculta el icono de error */
+        /* CAMBIO TÉCNICO: Ahora es un DIV, no una IMAGEN. Imposible que salga rota. */
         .hero-bg-layer {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            /* Propiedades de fondo puro */
+            background-color: #94A3B8; 
             border-radius: 24px 24px 0 0;
             opacity: 0.9;
+            /* Máscara de degradado */
             mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
             -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
-            background-color: #94A3B8; 
             z-index: 1;
-            color: transparent; /* ¡ESTO OCULTA EL ICONO ROTO! */
         }
 
         /* --- ESLOGAN --- */
@@ -263,7 +262,7 @@
             .image-slogan { font-size: 4rem; margin-top: 80px; margin-bottom: 40px; }
             .app-mockup { width: 340px; }
             .brand-text { font-size: 1.6rem; }
-            .big-price-number { font-size: 5rem; } /* Precio aún más grande en PC */
+            .big-price-number { font-size: 5rem; } 
         }
     </style>
 </head>
@@ -294,7 +293,7 @@
 
         <div class="hero-image-container">
             
-            <img src="familia.jpg" alt="" class="hero-bg-layer">
+            <div class="hero-bg-layer"></div>
             
             <h3 class="image-slogan">FAMILIA ORGANIZADA</h3>
             
