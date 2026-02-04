@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CustodiApp - Experiencia Real en Custodia Compartida</title>
+    <title>CustodiApp - Herramienta de Ayuda Familiar</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -92,21 +92,10 @@
             line-height: 1.6;
         }
 
-        /* --- PRECIO SEPARADO --- */
-        .price-container {
-            margin: 25px 0;
-        }
-        .big-price-number {
-            font-size: 4rem; 
-            line-height: 1;
-            color: var(--dark);
-        }
-        .big-price-text {
-            font-size: 1.3rem;
-            color: #64748B;
-            font-weight: 700;
-            margin-top: 5px; 
-        }
+        /* --- PRECIO --- */
+        .price-container { margin: 25px 0; }
+        .big-price-number { font-size: 4rem; line-height: 1; color: var(--dark); }
+        .big-price-text { font-size: 1.3rem; color: #64748B; font-weight: 700; margin-top: 5px; }
 
         .cta-button {
             background: linear-gradient(90deg, var(--green) 0%, #5ea33a 100%);
@@ -124,7 +113,7 @@
         .cta-button:hover { transform: translateY(-3px); box-shadow: 0 20px 40px rgba(118, 184, 82, 0.5); }
         .cta-button:active { transform: translateY(1px); border-bottom-width: 2px; }
 
-        /* --- CONTENEDOR FLEXBOX --- */
+        /* --- HERO IMAGE & SLOGAN --- */
         .hero-image-container {
             position: relative;
             margin-top: 60px;
@@ -137,24 +126,20 @@
             min-height: 600px; 
         }
 
-        /* CAMBIO TÉCNICO: Ahora es un DIV, no una IMAGEN. Imposible que salga rota. */
         .hero-bg-layer {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            /* Propiedades de fondo puro */
             background-color: #94A3B8; 
             border-radius: 24px 24px 0 0;
             opacity: 0.9;
-            /* Máscara de degradado */
             mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
             -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
             z-index: 1;
         }
 
-        /* --- ESLOGAN --- */
         .image-slogan {
             position: relative;
             z-index: 2;
@@ -169,7 +154,6 @@
             line-height: 1.2;
         }
         
-        /* --- MÓVIL --- */
         .app-mockup {
             position: relative;
             z-index: 3;
@@ -179,7 +163,7 @@
             border: 6px solid #fff;
         }
 
-        /* --- FEATURES --- */
+        /* --- FEATURES (VALORES) --- */
         .features { padding: 50px 5% 80px; background: white; }
         .grid {
             display: grid;
@@ -220,6 +204,7 @@
         .x-icon { color: #ff8f8f; font-weight: 900; font-size: 1.3rem; }
         .check-icon { color: var(--green); font-weight: 900; font-size: 1.3rem; }
 
+        /* --- GALLERY --- */
         .gallery-section { padding: 60px 5%; background: var(--light); text-align: center; }
         .gallery-section h2 { color: var(--blue); margin-bottom: 40px; font-size: 1.8rem; }
         .gallery-scroller {
@@ -277,11 +262,11 @@
     </nav>
 
     <header class="hero">
-        <div class="trust-badge">⭐ CREADA POR PADRES EXPERTOS</div>
+        <div class="trust-badge">⭐ CREADA PARA AYUDAR</div>
         
-        <h1>La app definitiva de<br>Custodia Compartida.<br><span class="highlight">Ni más, ni menos.</span></h1>
+        <h1>La herramienta útil<br>que estabas buscando.<br><span class="highlight">Sin cuotas mensuales.</span></h1>
         
-        <p>Desarrollada por un equipo con <strong>+15 años de experiencia personal</strong>. Hemos creado exactamente la herramienta que necesitas para eliminar el caos y los malentendidos. Directa al grano.</p>
+        <p>Somos padres que han vivido lo mismo que tú. Creamos CustodiApp porque hacía falta una herramienta honesta, privada y simple para organizarse. Sin letra pequeña.</p>
         
         <div class="price-container">
             <div class="big-price-number">2,99€</div>
@@ -305,16 +290,16 @@
     <section class="features">
         <div class="grid">
             <div class="card green">
-                <h3 style="color: var(--green)">✅ AL GRANO</h3>
-                <p>Sabemos que no quieres perder tiempo configurando mil opciones inútiles. CustodiApp se enfoca en lo importante: visualizar tus días y organizarte en segundos.</p>
+                <h3 style="color: var(--green)">✅ SIMPLE Y ÚTIL</h3>
+                <p>La creamos para que fuera fácil de usar. De un vistazo ves tu calendario y sabes cómo organizarte. Sin funciones innecesarias que complican la vida.</p>
             </div>
             <div class="card orange">
-                <h3 style="color: var(--orange)">🟧 MODELO JUSTO</h3>
-                <p>Creemos en la simplicidad. Olvídate de cuotas mensuales recurrentes que nunca acaban. Pagas una vez un precio simbólico (2,99€) y la herramienta es tuya para siempre.</p>
+                <h3 style="color: var(--orange)">🟧 PRECIO ÉTICO</h3>
+                <p>No creemos en cobrarte cada mes por ver tu propio calendario. Con un único pago simbólico ayudas a mantener el proyecto y la app es tuya para siempre.</p>
             </div>
             <div class="card blue">
-                <h3 style="color: var(--blue)">🔒 CERO CURIOSOS</h3>
-                <p>Al contrario que la mayoría de apps, aquí <strong>no hay "Nube"</strong>. Tus datos, tus hijos y tus horarios se quedan blindados en tu teléfono. Nadie más tiene acceso.</p>
+                <h3 style="color: var(--blue)">🔒 TU PRIVACIDAD</h3>
+                <p>Tus datos son sagrados. CustodiApp funciona en tu teléfono y no comparte nada con nadie. La tranquilidad empieza por la privacidad.</p>
             </div>
         </div>
     </section>
