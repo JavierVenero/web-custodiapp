@@ -23,8 +23,8 @@
             overflow-x: hidden;
         }
 
-        /* Títulos con Poppins (Fuente nueva) */
-        h1, h2, h3, .brand-text, .image-slogan { font-family: 'Poppins', sans-serif; font-weight: 900; }
+        /* Títulos con Poppins */
+        h1, h2, h3, .brand-text, .image-slogan, .big-price-number { font-family: 'Poppins', sans-serif; font-weight: 900; }
 
         nav {
             display: flex;
@@ -93,14 +93,21 @@
             line-height: 1.6;
         }
 
-        .big-price {
-            font-size: 3.2rem;
-            font-weight: 900;
-            color: var(--dark);
-            margin: 20px 0;
-            display: block;
+        /* --- NUEVA ESTRUCTURA DE PRECIO (SEPARADO) --- */
+        .price-container {
+            margin: 25px 0;
         }
-        .big-price span { font-size: 1.1rem; color: #64748B; font-weight: 600; }
+        .big-price-number {
+            font-size: 4rem; /* Precio gigante */
+            line-height: 1;
+            color: var(--dark);
+        }
+        .big-price-text {
+            font-size: 1.3rem;
+            color: #64748B;
+            font-weight: 700;
+            margin-top: 5px; /* Separación del número */
+        }
 
         .cta-button {
             background: linear-gradient(90deg, var(--green) 0%, #5ea33a 100%);
@@ -119,21 +126,19 @@
         .cta-button:active { transform: translateY(1px); border-bottom-width: 2px; }
 
         /* --- CONTENEDOR DE IMAGEN (SISTEMA FLEXBOX) --- */
-        /* Esto es lo que evita que se solapen */
         .hero-image-container {
             position: relative;
             margin-top: 60px;
             max-width: 1000px;
             width: 100%;
             display: flex;
-            flex-direction: column; /* Apila los elementos verticalmente */
+            flex-direction: column; 
             align-items: center;
             justify-content: flex-start;
-            /* Altura mínima para que quepa todo */
             min-height: 600px; 
         }
 
-        /* El fondo (gris o foto) ahora es absoluto detrás de todo */
+        /* ARREGLO ICONO ROTO: color:transparent oculta el icono de error */
         .hero-bg-layer {
             position: absolute;
             top: 0;
@@ -146,33 +151,33 @@
             mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
             -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
             background-color: #94A3B8; 
-            z-index: 1; /* Al fondo */
+            z-index: 1;
+            color: transparent; /* ¡ESTO OCULTA EL ICONO ROTO! */
         }
 
-        /* --- ESLOGAN (TEXTO) --- */
+        /* --- ESLOGAN --- */
         .image-slogan {
-            position: relative; /* Ya no es absoluto, respeta el flujo */
+            position: relative;
             z-index: 2;
             color: white;
-            font-size: 2.2rem; /* Tamaño grande móvil */
+            font-size: 2.2rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             text-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            margin-top: 60px; /* Espacio desde el borde superior */
-            margin-bottom: 30px; /* Espacio OBLIGATORIO antes del móvil */
+            margin-top: 60px; 
+            margin-bottom: 30px;
             width: 90%;
             line-height: 1.2;
         }
         
         /* --- MÓVIL --- */
         .app-mockup {
-            position: relative; /* Ya no es absoluto, respeta el flujo */
+            position: relative;
             z-index: 3;
             width: 280px;
             border-radius: 38px;
             box-shadow: 0 25px 60px -12px rgba(0,0,0,0.4);
             border: 6px solid #fff;
-            /* Sin margin-top negativo para evitar choques si la pantalla es pequeña */
         }
 
         /* --- FEATURES --- */
@@ -258,6 +263,7 @@
             .image-slogan { font-size: 4rem; margin-top: 80px; margin-bottom: 40px; }
             .app-mockup { width: 340px; }
             .brand-text { font-size: 1.6rem; }
+            .big-price-number { font-size: 5rem; } /* Precio aún más grande en PC */
         }
     </style>
 </head>
@@ -278,7 +284,10 @@
         
         <p>Desarrollada por un equipo con <strong>+15 años de experiencia personal</strong>. Hemos creado exactamente la herramienta que necesitas para eliminar el caos y los malentendidos. Directa al grano.</p>
         
-        <div class="big-price">2,99€ <span>/ pago único para siempre</span></div>
+        <div class="price-container">
+            <div class="big-price-number">2,99€</div>
+            <div class="big-price-text">Pago único para siempre</div>
+        </div>
 
         <a href="https://play.google.com/store/apps" class="cta-button">COMPRAR AHORA</a>
         <p style="font-size: 0.85rem; margin-top: 12px; opacity: 0.8; font-weight: 600;">Pago seguro a través de Google Play</p>
